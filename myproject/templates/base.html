@@ -1,0 +1,33 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>Post_list</title>
+</head>
+<body>
+    <div class="header">
+
+        <!-- h1 태그를 a 태그로 감싸고 href 속성에 `/` 넣어주어 클릭하면 메인 화면으로 가도록 해준다. -->
+        <a class = "home" href="/"<h1><h1>Itsdangerous's Blog!</h1></a>
+        <!-- Add Post 버튼 추가 -->
+        <a class = "add-post" href="{% url 'post_add' %}">
+            <button type="button" class = "btn btn-info">Add Post</button>
+        </a>
+
+    </div>
+    {% comment %} block 템플릿 태그는 부모 템플릿에서는 자식 템플릿이
+    들어갈 부분을 표시해주는 역할을 하고, 자식 템플릿에서는 상속받은 템플릿에
+    들어갈 부분을 표시하는 역할을 한다. {% endcomment %}
+    {% block content%}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <ul class="list">
+            <li class="item">
+                <h3><a href="">{{ post.title }}</a></h3>
+                <div class="content">{{ post.content|linebreaksbr }}</div>
+            </li>
+        </ul>
+
+        <!-- 메인 화면으로 가는 버튼 추가 -->
+        <a href = "/">
+            <button type="button" class="btn btn-primary to-main">To Main</button>
+        </a>
+
+        <!-- 글 삭제 버튼 추가 -->
+
+        <form action="{% url 'post_delete' pk=post.pk %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete Post</button>
+        </form>
+    </div>
+
+{% endblock %}

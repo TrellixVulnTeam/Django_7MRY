@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "baseUrl": "myproject"
+    },
+    "include": [
+        "myproject"
+    ]
+}
